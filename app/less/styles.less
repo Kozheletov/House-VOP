@@ -48,9 +48,13 @@ a {
   }
 
 .container {
-    max-width: 414px;
+    max-width: @w800;
     margin: 0 auto;
     background-color: @bg;
+
+    @media (min-width: @w801) {
+        max-width: 1920px;
+    }
 }
 
 .header-nav {
@@ -61,6 +65,15 @@ a {
                          "menu menu";
     align-items: center;
     overflow: hidden;
+
+    @media (min-width: @w801) {
+        & {
+            max-width: 1110px;
+            margin: 0 auto;
+            grid-template-columns:  154px 1fr;
+            grid-template-areas: "logo menu";
+        }
+    }
 }
 
 .button-menu {
@@ -70,6 +83,12 @@ a {
     grid-area: burger;
     justify-self: end;
     padding-right: 15px;
+
+    @media (min-width: @w801) {
+        & {
+            display: none;
+        }
+    }
     
     &_close {
         transform: translate(5px, 5px);
@@ -114,6 +133,18 @@ a {
 .logo {
     grid-area: logo;
     padding-left: 15px;
+
+    &__desktop-text {
+        display: none;
+        .font-raleway();
+        letter-spacing: 0.22em;
+        font-size: 12px;
+        color: @white;
+    
+        @media (min-width: @w801) {
+            display: block;
+        }
+    }
 }
 
 .nav {
@@ -121,20 +152,41 @@ a {
     grid-area: menu;
     padding: 40px 0;
 
+    @media (min-width: @w801) {
+        display: block;
+        justify-self: end;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 15px;
+    }
+
     &__list {
         .clear-list();
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
+
+        @media(min-width: @w801) {
+            flex-direction: row;
+        }
     }
 
     &__item {
         margin-bottom: 20px;
+
+        @media(min-width: @w801) {
+            margin-bottom: 0;
+            margin-right: 40px;
+        }
     }
 
     &__item:last-child {
         margin-bottom: 0;
+
+        @media(min-width: @w801) {
+            margin-right: 0;
+        }
     }
 
     &__link {
@@ -145,6 +197,11 @@ a {
         text-decoration: none;
         color: @white;
         transition: color 0.3s;
+
+        @media(min-width: @w801) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 
     &__link:hover,

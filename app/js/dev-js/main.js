@@ -11,6 +11,7 @@ window.addEventListener('load', () => {
     burger.addEventListener('click', (event) => {
         event.preventDefault();
         menu.classList.toggle('show');
+
         burger.classList.toggle('button-menu_close');
         burgerTopLine.classList.toggle('button-menu__long-line-top_close');
         burgerMiddleLine.classList.toggle('button-menu__short-line_close');
