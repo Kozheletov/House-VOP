@@ -7,4 +7,69 @@
     font-size: 28px;
     line-height: 37px;
     text-align: center;
+
+    @media (min-width: @w901) {
+        font-size: 36px;
+    }
+}
+
+.form {
+    display: grid;
+    gap: 15px;
+
+    &__input {
+        color: @white;
+        .font-raleway();
+        text-align: center;
+        font-size: 14px;
+        line-height: 28px;
+        padding: 0;
+        border: none;
+        outline: none;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        background-color: @color-input-bg;
+
+        &:focus,
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__input::placeholder{
+        color: @white;
+        font-size: 14px;
+        line-height: 28px;
+    }
+
+    &__button {
+        .font-raleway();
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 28px;
+        border-width: 0;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: @accent-color;
+        color: @white;
+        transition: color 0.3s;
+
+        &:focus,
+        &:hover {
+            color: @color-input-bg;
+        }
+    }
+
+    &__text {
+        .font-raleway();
+        font-size: 11px;
+        line-height: 14px;
+        text-align: center;
+        color: @white;
+
+        @media (min-width: @w901) {
+            font-size: 13px;
+        }
+    }
+
 }
