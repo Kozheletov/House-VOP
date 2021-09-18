@@ -705,3 +705,59 @@ a {
         }
     }
 }
+
+.questions {
+    padding-bottom: 95px;
+
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__form-container {
+        max-width: 255px;
+        margin: 0 auto;
+
+        @media (min-width: 500px) {
+            max-width: 100%;
+        }
+    }
+}
+
+.form__input_questions {
+    background-color: #50555c;
+}
+
+.form__input-tel {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 504px) and (max-width: 1099px) {
+    .form__input_questions,
+    .form__button_questions,
+    .form__text_questions {
+        width: 70%;
+        justify-self: center;
+    }
+}
+
+@media (min-width: 1110px) {
+
+    .questions__form-container {
+        max-width: 1110px;
+    }
+
+    .form__input-tel {
+        margin-bottom: 0;
+    }
+
+    .questions__form {
+        grid-template-columns: repeat(4, minmax(255px, 1fr));
+        gap: 30px;
+    }
+
+    .form__text_questions {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        align-self: center;
+    }
+}
