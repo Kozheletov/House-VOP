@@ -643,6 +643,7 @@ a {
             left: 0;
             background: linear-gradient(0deg, rgba(36, 43, 51, 0.8), rgba(36, 43, 51, 0.8));
         }
+
     }
 
     &__player {
@@ -759,5 +760,94 @@ a {
         grid-column: 1/2;
         grid-row: 1/2;
         align-self: center;
+    }
+}
+
+.page-footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: @white;
+    background-color: @bg-footer;
+
+    &__grid {
+        display: grid;
+        row-gap: 30px;
+        justify-content: center;
+    }
+
+    &__logo {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__logo-img {
+        margin-bottom: 15px;
+    }
+
+    &__logo-text {
+        .font-raleway();
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    &__nav-wrapper {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__nav:first-child {
+        margin-bottom: 15px;
+    }
+
+    &__nav-list {
+        .clear-list();
+    }
+
+    &__nav-list-item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &__nav-list-link {
+        color: @white;
+        text-decoration: none;
+        .font-raleway();
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.05em;
+
+    }
+
+    &__contacts {
+        text-align: center;
+        .font-raleway();
+    }
+
+    &__address {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    &__opening-hours {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    &__phone,
+    &__email {
+        color: @white;
+        text-decoration: none;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    &__email-accent {
+        color: @accent-color;
+        font-weight: 700;
     }
 }
