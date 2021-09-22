@@ -769,10 +769,27 @@ a {
     color: @white;
     background-color: @bg-footer;
 
+    @media (min-width: 1100px){
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
     &__grid {
         display: grid;
         row-gap: 30px;
         justify-content: center;
+
+        @media (min-width: 700px) {
+            grid-template-columns: repeat(3, minmax(auto, 1fr));
+            align-items: center;
+        }
+
+        @media (min-width: 1100px) {
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            grid-template-columns: 1fr 2fr 1fr;
+        }
     }
 
     &__logo {
@@ -781,6 +798,11 @@ a {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @media (min-width: 1100px) {
+            justify-self: start;
+            align-self: start;
+        }
     }
 
     &__logo-img {
@@ -799,10 +821,21 @@ a {
         justify-self: center;
         display: flex;
         flex-direction: column;
+
+        @media (min-width: 1100px) {
+            padding-left: 20px;
+            flex-direction: row;
+            justify-self: unset;
+        }
     }
 
     &__nav:first-child {
         margin-bottom: 15px;
+
+        @media (min-width: 1100px) {
+            margin-bottom: 0;
+            margin-right: 175px;
+        }
     }
 
     &__nav-list {
@@ -820,6 +853,12 @@ a {
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.05em;
+        transition: color 0.3s;
+
+        &:hover,
+        &:focus {
+            color: @accent-color;
+        }
 
     }
 
@@ -844,10 +883,31 @@ a {
         text-decoration: none;
         margin-bottom: 15px;
         display: block;
+        transition: color 0.3s;
+
+        &:hover,
+        &:focus {
+            color: @accent-color;
+        } 
+    }
+
+    &__email {
+        margin-bottom: 20px;
     }
 
     &__email-accent {
         color: @accent-color;
         font-weight: 700;
     }
+
+    &__social {
+        max-width: 170px;
+        .clear-list();
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(auto, 1fr));
+        gap: 20px;
+    }
+
 }
